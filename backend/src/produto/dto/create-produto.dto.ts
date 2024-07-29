@@ -1,1 +1,5 @@
-export class CreateProdutoDto {}
+export interface CreateProdutoDto {
+    nome: string;
+    descricao: string;
+    preco: number;
+}

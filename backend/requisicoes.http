@@ -1,0 +1,10 @@
+GET http://localhost:3001/produtos
+
+POST http://localhost:3001/produtos
+content-type: application/json
+
+{
+    "nome": "Notebook",
+    "descricao": "Notebook Dell",
+    "preco": 3500.00
+}
