@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [produto, setProduto]= useState<any>({})
   const [produtos, setProdutos]= useState<any>([])
 
   useEffect(() => {
@@ -27,8 +28,25 @@ export default function Home() {
     );
   }
 
+  function renderizarFormProduto() {
+    return (
+      <div className="flex gap-5">
+        <div className="flex flex-col">
+          <label htmlFor="nome">Nome</label>
+          <input 
+          id="nome"
+          type="text" 
+          value={produto.nome} 
+          onChange={(e) => ({ ...produto, nome: e.target.value})}
+          className='bg-zinc-700 p-2 rounded-md' />
+        </div>
+      </div>
+    );
+  }
+
   return (
-   <div className="flex flex-col justify-center items-center h-screen">
+   <div className="flex flex-col justify-center items-center h-screen gap-10">
+    {renderizarFormProduto()}
     {renderizarProdutos()}
    </div>
   );
